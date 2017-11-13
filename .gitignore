@@ -1,20 +1,6 @@
 # Ignore the build and lib dirs
-cli/build
-cli/lib/*
+build
+lib/*
 
 # Ignore any executables
-cli/bin/*
-
-# Ignore the build and lib dirs
-srv/build
-srv/lib/*
-
-# Ignore any executables
-srv/bin/*
-
-# Ignore the build and lib dirs
-htcpcp/build
-htcpcp/lib/*
-
-# Ignore any executables
-htcpcp/bin/*
+bin/*
