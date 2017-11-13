@@ -7,4 +7,4 @@ file(GLOB SOURCES "src/*.cpp")
 
 set(EXECUTABLE_OUTPUT_PATH "../bin")
 
-add_executable(HtcpcpMessage ${SOURCES})
+add_executable(NetCtl src/NetCtl.cpp)
