@@ -1,26 +1,22 @@
-#ifndef DEF_HTCPCPMESSAGE_H
-#define DEF_HTCPCPMESSAGE_H
+#ifndef DEF_HTCPCPREQUEST_H
+#define DEF_HTCPCPREQUESTH
 
 #include <string>
 #include <iostream>
 #include <boost/algorithm/string.hpp>
+#include <HtcpcpMessage.h>
 
 using namespace std;
 
-class HtcpcpMessage
+class HtcpcpRequest : public HtcpcpMessage
 {
     public:
-        HtcpcpMessage();
-        HtcpcpMessage(string raw);
-        ~HtcpcpMessage();
-        string getRaw();
-        virtual bool isValid();
-
-    private:
-        string m_raw;
-        bool m_isValid;
+        HtcpcpRequest();
+        HtcpcpRequest(string raw);
+        ~HtcpcpRequest();
+        bool isValid();
 
     protected:
-        void setValid(bool isValid);
+        typedef HtcpcpMessage super;
 };
 #endif

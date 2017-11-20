@@ -4,7 +4,6 @@
 #include <string>
 #include <iostream>
 #include <boost/algorithm/string.hpp>
-
 using namespace std;
 
 class HtcpcpMessage

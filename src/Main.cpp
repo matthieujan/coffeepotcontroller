@@ -2,6 +2,8 @@
 #include <vector>
 #include <string>
 #include "HtcpcpMessage.h"
+#include "HtcpcpResponse.h"
+#include "HtcpcpRequest.h"
 
 using namespace std;
 
@@ -16,13 +18,38 @@ int htcpcp(){
     return 0;
 }
 
-int main(int argc, char *argv[]){
+int htresp(){
+    string raw = "HtcpcpResponse\n";
+    HtcpcpResponse* mess = new HtcpcpResponse(raw);
+    if(!mess->isValid()){
+        cout << mess->getRaw() << endl;
+        cout << "The server you're contacting is on crack" << endl;
+    }
+    return 0;
+}
 
+int htreq(){
+    string raw = "HtcpcpRequest\n";
+    HtcpcpRequest* mess = new HtcpcpRequest(raw);
+    if(!mess->isValid()){
+        cout << mess->getRaw() << endl;
+        cout << "The server you're contacting is on crack" << endl;
+    }
+    return 0;
+}
+
+int main(int argc, char *argv[]){
 
     for(int i = 0;i<argc;i++)
     {
         if(strcmp (argv[i],"htcpcp") == 0){
             htcpcp();
+        }
+        if(strcmp (argv[i],"htresp") == 0){
+            htresp();
+        }
+        if(strcmp (argv[i],"htreq") == 0){
+            htreq();
         }
     }
     return 0;
