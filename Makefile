@@ -9,7 +9,7 @@ SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
 CFLAGS=-W -Wall -ansi -pedantic
-LIB := -L lib -lboost_regex
+LIB := -L lib -lboost_regex -lcppnetlib-client-connections -lcppnetlib-server-parsers -lcppnetlib-uri
 INC := -I include
 
 TARGET := bin/cpc
