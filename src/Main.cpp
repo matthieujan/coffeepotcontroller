@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include <string>
 #include "HtcpcpMessage.h"
 
@@ -15,18 +16,14 @@ int htcpcp(){
     return 0;
 }
 
+int main(int argc, char *argv[]){
 
 
-
-int main(){
-
-    int a = htcpcp();
-    if(a != 0){
-        cout << "Error : htcpcp"<< endl;
-    }else{
-        cout << "All good, for now"<< endl;
+    for(int i = 0;i<argc;i++)
+    {
+        if(strcmp (argv[i],"htcpcp") == 0){
+            htcpcp();
+        }
     }
-
-
     return 0;
 }
