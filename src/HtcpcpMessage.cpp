@@ -3,12 +3,14 @@
 using namespace std;
 
 HtcpcpMessage::HtcpcpMessage(){
-    rawMessage = "Test";
+    m_raw = "";
+    m_isValid = false;
 }
 
 HtcpcpMessage::HtcpcpMessage(string raw)
 {
-    this->rawMessage = raw;
+    m_isValid = false;
+    m_raw = raw;
 }
 
 HtcpcpMessage::~HtcpcpMessage()
@@ -16,12 +18,16 @@ HtcpcpMessage::~HtcpcpMessage()
 
 }
 
-string HtcpcpMessage::getCmd()
-{
-    return "test";
-}
-
 string HtcpcpMessage::getRaw()
 {
-    return rawMessage;
+    return m_raw;
+}
+
+bool HtcpcpMessage::isValid()
+{
+    return m_isValid;
+}
+
+void HtcpcpMessage::setValid(bool isValid){
+    m_isValid = isValid;
 }

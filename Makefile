@@ -9,7 +9,7 @@ SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
 CFLAGS=-W -Wall -ansi -pedantic
-LIB := 
+LIB := -L lib -lboost_regex
 INC := -I include
 
 TARGET := bin/cpc

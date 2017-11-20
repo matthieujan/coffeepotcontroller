@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <boost/algorithm/string.hpp>
 
 using namespace std;
 
@@ -12,10 +13,14 @@ class HtcpcpMessage
         HtcpcpMessage();
         HtcpcpMessage(string raw);
         ~HtcpcpMessage();
-        string getCmd();
         string getRaw();
+        virtual bool isValid();
 
     private:
-        string rawMessage;
+        string m_raw;
+        bool m_isValid;
+
+    protected:
+        void setValid(bool isValid);
 };
 #endif
