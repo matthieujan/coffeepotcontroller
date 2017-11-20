@@ -3,16 +3,19 @@
 
 #include <string>
 #include <iostream>
+#include <Driver.h>
 
 using namespace std;
 
-class CamDriver
+class CamDriver : public Driver
 {
     public:
         CamDriver();
         ~CamDriver();
-        bool turnOn();
-        bool turnOff();
-        bool snapshot();
+        virtual void* get();
+        virtual void set();
+
+    protected:
+        typedef Driver super;
 };
 #endif
