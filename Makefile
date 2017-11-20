@@ -1,6 +1,6 @@
 # TODO: Move `libmongoclient.a` to /usr/local/lib so this can work on production servers
 #
-CC := g++ # This is the main compiler
+CC := gcc # This is the main compiler
 # CC := clang --analyze # and comment out the linker last line for sanity
 SRCDIR := src
 BUILDDIR := build
@@ -8,8 +8,8 @@ BINDIR := bin
 SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
-CFLAGS=-W -Wall -ansi -pedantic
-LIB := -L lib -lboost_regex -lcppnetlib-client-connections -lcppnetlib-server-parsers -lcppnetlib-uri
+CFLAGS=-W -Wall -ansi -pedantic -std=c++11
+LIB := -L lib -lboost_regex -lstdc++ -lcppnetlib-client-connections -lcppnetlib-server-parsers -lcppnetlib-uri
 INC := -I include
 
 TARGET := bin/cpc
