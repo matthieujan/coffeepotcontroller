@@ -12,5 +12,12 @@ class PotState
         PotState();
         ~PotState();
         bool isOn();
+        void setOn(bool value);
+        string getImage();
+        void setImage(string value);
+
+    private:
+        string image;
+        bool on;
 };
 #endif
