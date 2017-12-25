@@ -95,7 +95,7 @@ void BasicClientNetCtl::getCpc()
         boost::asio::connect(s, iterator);
 
         using namespace std; // for strlen.
-        char request[max_length] = "Enculé !";
+        char request[max_length] = "get";
         size_t request_length = strlen(request);
         boost::asio::write(s, boost::asio::buffer(request, request_length));
 

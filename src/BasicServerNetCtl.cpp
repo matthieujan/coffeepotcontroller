@@ -37,6 +37,8 @@ void BasicServerNetCtl::session(socket_ptr sock)
       boost::system::error_code error;
       size_t length = sock->read_some(boost::asio::buffer(data), error);
 
+      cout << data << endl;
+
       boost::asio::write(*sock, boost::asio::buffer(data, length));
   }
   catch (std::exception& e)
