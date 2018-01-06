@@ -19,12 +19,12 @@ ClientCtl::~ClientCtl()
     delete this->potstate;
 }
 
-void ClientCtl::run()
+void ClientCtl::run(char* cmd)
 {
     bool running = true;
     while(running)
     {
-        string input = this->view->ask();
+        string input = cmd;
         string message = "Error";
         if(input == "start"){
             this->net->startCpc();

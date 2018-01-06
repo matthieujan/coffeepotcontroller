@@ -24,10 +24,8 @@ int bvbnclient(char* argv[]){
     PotState* ps = new PotState();
     //TODO correct host
     ClientNetCtl* cnc = new BasicClientNetCtl(argv[2],argv[3]);
-    cout << cnc->getHost() << endl;
-    cout << cnc->getPort() << endl;
     ClientCtl* sc = new ClientCtl(ps,v,cnc);
-    sc->run();
+    sc->run(argv[4]);
     return 0;
 }
 

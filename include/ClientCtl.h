@@ -14,7 +14,7 @@ class ClientCtl
         ClientCtl();
         ClientCtl(PotState* ps, View* v, ClientNetCtl* cnc);
         ~ClientCtl();
-        void run();
+        void run(char* cmd);
 
     private:
         ClientNetCtl* net;
