@@ -14,13 +14,11 @@ BasicClientNetCtl::~BasicClientNetCtl()
 
 }
 
-void BasicClientNetCtl::startCpc()
+void BasicClientNetCtl::emitCmd(string req)
 {
-
     try
     {
         boost::asio::io_service io_service;
-
         tcp::resolver resolver(io_service);
         tcp::resolver::query query(tcp::v4(), this->getHost(), this->getPort());
         tcp::resolver::iterator iterator = resolver.resolve(query);
@@ -29,17 +27,16 @@ void BasicClientNetCtl::startCpc()
         boost::asio::connect(s, iterator);
 
         using namespace std; // For strlen.
-        char request[max_length] = "start";
+        char request[max_length];
+        strcpy(request,req.c_str());
         size_t request_length = strlen(request);
         boost::asio::write(s, boost::asio::buffer(request, request_length));
 
         char reply[max_length];
+        boost::system::error_code error;
         size_t reply_length = boost::asio::read(s,
-            boost::asio::buffer(reply, request_length));
-        //TODO Handle Response
-        std::cout << "Reply is: ";
-        std::cout.write(reply, reply_length);
-        std::cout << "\n";
+            boost::asio::buffer(reply),error);
+        this->handleReply(reply);
     }
     catch (std::exception& e)
     {
@@ -47,70 +44,14 @@ void BasicClientNetCtl::startCpc()
     }
 }
 
-void BasicClientNetCtl::stopCpc()
+void BasicClientNetCtl::handleReply(char* rep)
 {
-    try
-    {
-        boost::asio::io_service io_service;
+    string reply = rep;
 
-        tcp::resolver resolver(io_service);
-        tcp::resolver::query query(tcp::v4(), this->getHost(), this->getPort());
-        tcp::resolver::iterator iterator = resolver.resolve(query);
-
-        tcp::socket s(io_service);
-        boost::asio::connect(s, iterator);
-
-        using namespace std; // for strlen.
-        char request[max_length] = "stop";
-        size_t request_length = strlen(request);
-        boost::asio::write(s, boost::asio::buffer(request, request_length));
-
-        char reply[max_length];
-        size_t reply_length = boost::asio::read(s,
-            boost::asio::buffer(reply, request_length));
-        //todo handle response
-        std::cout << "reply is: ";
-        std::cout.write(reply, reply_length);
-        std::cout << "\n";
+    if(reply.find("cafetière est actuellement en marche") != string::npos){
+        cout << "CoffeePot On" << endl;
+    }else if(reply.find("cafetière est actuellement éteinte") != string::npos){
+        cout << "CoffeePot Off" << endl;
     }
-    catch (std::exception& e)
-    {
-        std::cerr << "exception: " << e.what() << "\n";
-    }
-    cout << "/start cpc" << endl;
 
 }
-
-void BasicClientNetCtl::getCpc()
-{
-    try
-    {
-        boost::asio::io_service io_service;
-
-        tcp::resolver resolver(io_service);
-        tcp::resolver::query query(tcp::v4(), this->getHost(), this->getPort());
-        tcp::resolver::iterator iterator = resolver.resolve(query);
-
-        tcp::socket s(io_service);
-        boost::asio::connect(s, iterator);
-
-        using namespace std; // for strlen.
-        char request[max_length] = "get";
-        size_t request_length = strlen(request);
-        boost::asio::write(s, boost::asio::buffer(request, request_length));
-
-        char reply[max_length];
-        size_t reply_length = boost::asio::read(s,
-            boost::asio::buffer(reply, request_length));
-        //todo handle response
-        std::cout << "reply is: ";
-        std::cout.write(reply, reply_length);
-        std::cout << "\n";
-    }
-    catch (std::exception& e)
-    {
-        std::cerr << "exception: " << e.what() << "\n";
-    }
-    cout << "/start cpc" << endl;
-}
-

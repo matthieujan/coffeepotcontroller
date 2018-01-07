@@ -13,9 +13,8 @@ class BasicClientNetCtl : public ClientNetCtl
         BasicClientNetCtl(string host,string port);
         ~BasicClientNetCtl();
 
-        void startCpc();
-        void stopCpc();
-        void getCpc();
+        void emitCmd(string request);
+        void handleReply(char* reply);
     private:
         enum { max_length = 4096 };
 };

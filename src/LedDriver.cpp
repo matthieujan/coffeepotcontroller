@@ -17,9 +17,7 @@ bool LedDriver::get()
 
 void LedDriver::set(bool value)
 {
-    int pin = 11;
-    if (wiringPiSetup() == -1)
-            exit (1);
+    int pin = 7;
     pinMode(pin, OUTPUT);
 
     if(value){
