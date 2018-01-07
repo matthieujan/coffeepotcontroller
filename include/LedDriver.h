@@ -10,6 +10,8 @@
 
 using namespace std;
 
+//This driver turn on and off a led wired on the pin 7 of the raspberry
+//For testing purpose
 class LedDriver : public Driver
 {
     public:

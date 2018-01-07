@@ -8,6 +8,7 @@
 using boost::asio::ip::tcp;
 using namespace std;
 
+//Generic Net Controller, store the state of the controller (host and port)
 class ServerNetCtl
 {
     public:

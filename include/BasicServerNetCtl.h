@@ -12,6 +12,8 @@
 using boost::asio::ip::tcp;
 typedef boost::shared_ptr<tcp::socket> socket_ptr;
 
+//This class is the basic implementation of the ServerNetCtl, handling http request
+//It act like a very dumb http server (doesnt care about anything but the ?action=XX)
 class BasicServerNetCtl : public ServerNetCtl
 {
     public:
@@ -20,9 +22,9 @@ class BasicServerNetCtl : public ServerNetCtl
         ~BasicServerNetCtl();
 
         tcp::socket listen();
-        static void session(socket_ptr sock);
-        static string generateResponse();
-        static void handleRequest(char* request);
+        static void session(socket_ptr sock); // Handle a session to a specific client
+        static string generateResponse(); // Generate a generic response with potstate values
+        static void handleRequest(char* request); // Handle request to know if potstate has to be modified
     private:
         enum { max_length = 4096 };
 };

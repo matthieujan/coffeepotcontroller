@@ -6,6 +6,7 @@
 
 using namespace std;
 
+//Our basic driver, having a get and state and modiying the gpio value accordingly
 class Driver
 {
     public:
