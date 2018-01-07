@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include "Driver.h"
 
 using namespace std;
 
@@ -24,10 +25,15 @@ class PotState
         //getter/Setter
         bool getState();
         void setState(bool state);
+        long getTime();
+        void setTime(long time);
+        void setDriver(Driver* driver);
 
     private:
         PotState() {}
         bool state = false;
+        long time = 0;
+        Driver* driver;
 
 };
 

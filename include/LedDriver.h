@@ -3,6 +3,9 @@
 
 #include <string>
 #include <iostream>
+#include <wiringPi.h>
+#include <stdio.h>
+
 #include "Driver.h"
 
 using namespace std;
@@ -12,8 +15,8 @@ class LedDriver : public Driver
     public:
         LedDriver();
         ~LedDriver();
-        virtual float get();
-        virtual void set(float value);
+        virtual bool get();
+        virtual void set(bool value);
     private:
         float m_value;
 };

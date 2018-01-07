@@ -10,12 +10,23 @@ LedDriver::~LedDriver()
 
 }
 
-float LedDriver::get()
+bool LedDriver::get()
 {
     return this->m_value;
 }
 
-void LedDriver::set(float value)
+void LedDriver::set(bool value)
 {
-    this->m_value = value;
+    int pin = 11;
+    if (wiringPiSetup() == -1)
+            exit (1);
+    pinMode(pin, OUTPUT);
+
+    if(value){
+        this->m_value = 1.0;
+        digitalWrite(pin, 1);
+    }else{
+        this->m_value = 0;
+        digitalWrite(pin, 0);
+    }
 }

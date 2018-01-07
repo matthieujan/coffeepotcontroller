@@ -11,7 +11,7 @@ class Driver
     public:
         Driver();
         ~Driver();
-        virtual float get() = 0;
-        virtual void set(float value) = 0;
+        virtual bool get() = 0;
+        virtual void set(bool value) = 0;
 };
 #endif
