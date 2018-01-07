@@ -5,16 +5,16 @@ ServerCtl::ServerCtl()
 
 }
 
-ServerCtl::ServerCtl(ServerNetCtl* net,CoffeeDriver* cd)
+ServerCtl::ServerCtl(ServerNetCtl* net,Driver* d)
 {
     this->net = net;
-    this->cd = cd;
+    this->d = d;
 }
 
 ServerCtl::~ServerCtl()
 {
     delete this->net;
-    delete this->cd;
+    delete this->d;
 }
 
 void ServerCtl::run()

@@ -11,7 +11,7 @@ class Driver
     public:
         Driver();
         ~Driver();
-        virtual void* get() = 0;
-        virtual void set() = 0;
+        virtual float get() = 0;
+        virtual void set(float value) = 0;
 };
 #endif

@@ -3,7 +3,7 @@
 
 #include "PotState.h"
 #include "ServerNetCtl.h"
-#include "CoffeeDriver.h"
+#include "Driver.h"
 
 // Has a component PotState, ServerNetCtl, CamDriver and CoffeeDriver
 
@@ -11,14 +11,14 @@ class ServerCtl
 {
     public:
         ServerCtl();
-        ServerCtl(ServerNetCtl* net, CoffeeDriver* cd);
+        ServerCtl(ServerNetCtl* net, Driver* d);
         ~ServerCtl();
 
         void run();
 
     private:
         ServerNetCtl* net;
-        CoffeeDriver* cd;
+        Driver* d;
 };
 
 #endif
