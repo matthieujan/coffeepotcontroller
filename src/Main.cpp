@@ -11,9 +11,8 @@ using namespace std;
 int server(char* argv[]){
     cout << "Starting server :" << endl;
     ServerNetCtl* snc= new BasicServerNetCtl(argv[2],argv[3]);
-    PotState* ps = new PotState();
     CoffeeDriver * cd = new CoffeeDriver();
-    ServerCtl* sc = new ServerCtl(ps,snc,cd);
+    ServerCtl* sc = new ServerCtl(snc,cd);
     sc->run();
     return 0;
 }
@@ -21,10 +20,9 @@ int server(char* argv[]){
 int bvbnclient(char* argv[]){
     cout << "Starting client :" << endl;
     View* v = new ConsoleView();
-    PotState* ps = new PotState();
     //TODO correct host
     ClientNetCtl* cnc = new BasicClientNetCtl(argv[2],argv[3]);
-    ClientCtl* sc = new ClientCtl(ps,v,cnc);
+    ClientCtl* sc = new ClientCtl(v,cnc);
     sc->run(argv[4]);
     return 0;
 }

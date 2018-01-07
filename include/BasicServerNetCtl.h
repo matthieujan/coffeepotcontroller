@@ -2,9 +2,11 @@
 #define DEF_BASICSERVERNETCTL_H
 
 #include "ServerNetCtl.h"
+#include "PotState.h"
 #include <boost/bind.hpp>
 #include <boost/smart_ptr.hpp>
 #include <boost/asio.hpp>
+#include <boost/algorithm/string.hpp>
 #include <boost/thread/thread.hpp>
 
 using boost::asio::ip::tcp;
@@ -19,8 +21,10 @@ class BasicServerNetCtl : public ServerNetCtl
 
         tcp::socket listen();
         static void session(socket_ptr sock);
+        static string generateResponse();
+        static void handleRequest(char* request);
     private:
-        enum { max_length = 1024 };
+        enum { max_length = 4096 };
 };
 
 

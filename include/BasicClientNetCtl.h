@@ -17,7 +17,7 @@ class BasicClientNetCtl : public ClientNetCtl
         void stopCpc();
         void getCpc();
     private:
-        enum { max_length = 1024 };
+        enum { max_length = 4096 };
 };
 
 

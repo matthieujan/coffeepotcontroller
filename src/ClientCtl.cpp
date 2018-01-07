@@ -5,18 +5,16 @@ ClientCtl::ClientCtl()
 
 }
 
-ClientCtl::ClientCtl(PotState* potstate, View* view, ClientNetCtl* net)
+ClientCtl::ClientCtl(View* view, ClientNetCtl* net)
 {
     this->net = net;
     this->view = view;
-    this->potstate = potstate;
 }
 
 ClientCtl::~ClientCtl()
 {
     delete this->net;
     delete this->view;
-    delete this->potstate;
 }
 
 void ClientCtl::run(char* cmd)

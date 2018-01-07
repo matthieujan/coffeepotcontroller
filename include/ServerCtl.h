@@ -11,13 +11,12 @@ class ServerCtl
 {
     public:
         ServerCtl();
-        ServerCtl(PotState* potstate,ServerNetCtl* net, CoffeeDriver* cd);
+        ServerCtl(ServerNetCtl* net, CoffeeDriver* cd);
         ~ServerCtl();
 
         void run();
 
     private:
-        PotState* potstate;
         ServerNetCtl* net;
         CoffeeDriver* cd;
 };

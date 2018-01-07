@@ -1,22 +1,12 @@
 #include "PotState.h"
 
-/*
- *
- */
-PotState::PotState()
+bool PotState::getState()
 {
-    this->image = "Wala";
-    this->on = true;
+    return this->state;
 }
 
-PotState::~PotState()
+void PotState::setState(bool value)
 {
-
+    this->state = value;
 }
-
-bool PotState::isOn()
-{
-    return this->on;
-}
-
 
