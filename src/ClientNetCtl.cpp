@@ -13,11 +13,13 @@ ClientNetCtl::~ClientNetCtl()
 
 }
 
+//Host getter
 string ClientNetCtl::getHost()
 {
     return m_host;
 }
 
+//Port getter
 string ClientNetCtl::getPort()
 {
     return m_port;
