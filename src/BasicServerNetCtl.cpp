@@ -71,7 +71,8 @@ string BasicServerNetCtl::generateResponse()
                 // Printing the pot state
                 content+="<p>";
                 if(potstate.getState()){
-                    content+= "La cafetière est actuellement en marche.";
+                    content+= "La cafetière est actuellement en marche depuis : ";
+                    content+= PotState::getInstance().getDate();
                 }else{
 
                     content+= "La cafetière est actuellement éteinte.";
@@ -114,6 +115,7 @@ void BasicServerNetCtl::handleRequest(char* req)
     boost::split(results,request,[](char c){return c == '\r';});
     if(results.at(0).find("?action=on") != string::npos){
         PotState::getInstance().setState(true);
+        PotState::getInstance().setDate();
     }else if(results.at(0).find("?action=off") != string::npos){
         PotState::getInstance().setState(false);
     }

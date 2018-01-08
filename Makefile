@@ -9,7 +9,7 @@ SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
 CFLAGS=-W -Wall -ansi -pedantic -std=c++11
-LIB := -L lib -lboost_regex -lstdc++ -lboost_thread -lpthread -lboost_system -lwiringPi
+LIB := -L lib -lboost_regex -lstdc++ -lboost_thread -lpthread -lboost_system -lwiringPi -lcrypt
 INC := -I include
 
 TARGET := bin/cpc
@@ -24,7 +24,7 @@ $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
 	@echo " $(CC) $(CFLAGS) $(INC) -c -o $@ $<"; $(CC) $(CFLAGS) $(INC) -c -o $@ $<
 
 clean:
-	@echo " Cleaning..."; 
+	@echo " Cleaning...";
 	@echo " $(RM) -r $(BUILDDIR) $(TARGET)"; $(RM) -r $(BUILDDIR) $(TARGET)
 
 # Tests
