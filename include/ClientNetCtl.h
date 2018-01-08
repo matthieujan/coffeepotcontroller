@@ -8,6 +8,8 @@
 using namespace std;
 using boost::asio::ip::tcp;
 
+// Generic NetCtl for the client
+// Store the host and port information, and a virtual emitCmd
 class ClientNetCtl
 {
     public:
@@ -20,12 +22,9 @@ class ClientNetCtl
         string getHost();
         string getPort();
 
-        virtual void startCpc() = 0;
-        virtual void stopCpc() = 0;
-        virtual void getCpc() = 0;
+        virtual void emitCmd(string cmd) = 0;
 
     private:
-        bool running;
         string m_host;
         string m_port;
 };

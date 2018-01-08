@@ -5,14 +5,15 @@
 #include "ClientNetCtl.h"
 #include <thread>
 
-// Has a component ClientNetCtl, View and PotState
-
+// Has a component ClientNetCtl, View
+// This class control the view and net controller
 class ClientCtl
 {
     public:
         ClientCtl();
         ClientCtl(View* v, ClientNetCtl* cnc);
         ~ClientCtl();
+        //Handle the request given by the main function
         void run(char* cmd);
 
     private:

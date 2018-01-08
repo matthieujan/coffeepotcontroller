@@ -9,6 +9,7 @@ ServerCtl::ServerCtl(ServerNetCtl* net,Driver* d)
 {
     this->net = net;
     this->d = d;
+    PotState::getInstance().setDriver(d);
 }
 
 ServerCtl::~ServerCtl()

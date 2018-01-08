@@ -3,6 +3,7 @@
 
 #include"View.h"
 
+// Dummy view, actually not used in our project for now
 class ConsoleView : public View
 {
     public:

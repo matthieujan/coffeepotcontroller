@@ -10,6 +10,7 @@ View::~View()
 
 }
 
+// Generic ask function using the command line
 string View::ask()
 {
     string input;

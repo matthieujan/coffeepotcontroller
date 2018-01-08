@@ -17,24 +17,19 @@ ClientCtl::~ClientCtl()
     delete this->view;
 }
 
+/*
+ * Method to run the client
+ */
 void ClientCtl::run(char* cmd)
 {
-    bool running = true;
-    while(running)
-    {
-        string input = cmd;
-        string message = "Error";
-        if(input == "start"){
-            this->net->startCpc();
-        }else if(input == "stop"){
-            this->net->stopCpc();
-        }else if(input == "exit"){
-            cout << "Bye" << endl;
-            running = false;
-        }else if(input == "get"){
-            this->net->getCpc();
-        }else{
-            cout << "Not a valid command : type exit to exit" << endl;
-        }
+    string input = cmd;
+    if(input == "start"){
+        this->net->emitCmd("GET /?action=on");
+    }else if(input == "stop"){
+        this->net->emitCmd("GET /?action=off");
+    }else if(input == "get"){
+        this->net->emitCmd("GET /");
+    }else{
+        cout << "Not a valid command : use start, stop or get" << endl;
     }
 }

@@ -1,10 +1,12 @@
 #include "PotState.h"
 
+//Getter for state
 bool PotState::getState()
 {
     return this->state;
 }
 
+//Setter for state, call the driver
 void PotState::setState(bool value)
 {
     this->driver->set(value);
@@ -41,6 +43,7 @@ void PotState::setDate()
   this->date = format;
 }
 
+//Set the driver used by PotState
 void PotState::setDriver(Driver* d)
 {
     this->driver = d;

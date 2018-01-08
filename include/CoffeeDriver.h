@@ -6,6 +6,7 @@
 
 using namespace std;
 
+// CoffeeDriver controller
 class CoffeeDriver
 {
     public:

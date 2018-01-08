@@ -5,8 +5,8 @@
 #include "ServerNetCtl.h"
 #include "Driver.h"
 
-// Has a component PotState, ServerNetCtl, CamDriver and CoffeeDriver
-
+// Has a component ServerNetCtl, Driver
+// This class organise the net and driver object
 class ServerCtl
 {
     public:

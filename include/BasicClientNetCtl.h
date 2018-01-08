@@ -6,6 +6,10 @@
 
 using boost::asio::ip::tcp;
 
+/*
+ * This object serve has our net controller to communication with the server.
+ * Act to be understand by our very dumb server (transmit only GET /?action=XX)
+ */
 class BasicClientNetCtl : public ClientNetCtl
 {
     public:
@@ -13,10 +17,12 @@ class BasicClientNetCtl : public ClientNetCtl
         BasicClientNetCtl(string host,string port);
         ~BasicClientNetCtl();
 
-        void startCpc();
-        void stopCpc();
-        void getCpc();
+        // Emit a (valid) command to the server
+        void emitCmd(string request);
+        // Handle the response to know if the coffee pot is on or off
+        void handleReply(char* reply);
     private:
+        // Max size of the buffer we use
         enum { max_length = 4096 };
 };
 

@@ -11,6 +11,7 @@ using namespace std;
 
 /*
  * The PotState object is used by the server to remember what is happening to the coffee pot.
+ * It use his driver to modify the state physically
  */
 class PotState
 {
