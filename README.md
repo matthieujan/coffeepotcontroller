@@ -41,7 +41,7 @@ Il a été réalisé dans le cadre du cours Programmation Objet Avancée / Proje
 - La doc est : en dur dans les commentaires / Dans le ficher rendu/Doc_CPC.pdf
 - Readme/Executable/Instructions de compilation : ... :)
 - Classes et Heritage : Les classes Driver / LedDriver / CoffeeDriver présente des Drivers interchangeable dans le main
-- Surdéfinition : Pas présent (un interet très artificiel dans notre projet utilisant beaucoup de librairies)
+- Surdéfinition : Pas présent (un interet très artificiel dans notre projet utilisant beaucoup de librairies, à la limite la dé-définition de l'opérateur = de PotState)
 - STL : Rapide utilisation dans la classe BasicServerNetCtl, dans la fonction requestHandle pour split et retrouver l'instruction GET
 - Qualité du projet et fonctionnalités : Réseau / Pseudo Web / Cafetière
 - Vidéo : rendu/TODO
