@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>CoffeePotControler</title>
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Coffee Pot Controler</h1>
+        <small>Félix Bezançon & Matthieu Jan</small>
+      </section>
+      <section>
+        <h2>Sommaire</h2>
+        <ul>
+          <li>Sujet et contraintes</li>
+          <li>Présentation du projet</li>
+          <li>Explication des différentes classes</li>
+          <li>Problèmes rencontrés</li>
+          <li>Démo</li>
+        </ul>
+      </section>
+      <section>
+        <section>
+          <h2>Sujet et contraintes</h2>
+        </section>
+				<section>
+					<p>Réalisation d'un projet C++</p>
+					<p>Sujet libre</p>
+				</section>
+      </section>
+			<section>
+				<section>
+					<h2>Présentation du projet</h2>
+				</section>
+				<section>
+					<p>Constat sur les developpeurs:</p>
+					<ul
+						<li>Feignant</li>
+						<li>Grand consommateur de café</li>
+						<li>Sort peu de leur zone de confort</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li><p>Réalisation d'un système de gestion de cafetière</p></li>
+						<li><p>Réseau</p></li>
+						<li><p>Cafetière physique</p></li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Explication des différentes classes</h2>
+				</section>
+				<section>
+					Client
+				</section>
+				<section>
+					Serveur
+				</section>
+				<section>
+					Driver
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Problèmes rencontrés</h2>
+				</section>
+				<section>
+					<ul>
+						<li>Définition de l'architecture</li>
+						<li>Prise en main des librairies</li>
+						<li>Mise en place de la cafetière physique</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<h2>Démo !</h2>
+			</section>
+    </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      dependencies: [{
+          src: 'plugin/markdown/marked.js'
+        },
+        {
+          src: 'plugin/markdown/markdown.js'
+        },
+        {
+          src: 'plugin/notes/notes.js',
+          async: true
+        },
+        {
+          src: 'plugin/highlight/highlight.js',
+          async: true,
+          callback: function() {
+            hljs.initHighlightingOnLoad();
+          }
+        }
+      ]
+    });
+  </script>
+</body>
+
+</html>
