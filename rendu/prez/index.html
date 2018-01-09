@@ -65,7 +65,7 @@
 					<ul>
 						<li><p>Réalisation d'un système de gestion de cafetière</p></li>
 						<li><p>À distance</p></li>
-						<li><p>Cafetière physique (parce que boire du café virtuel ...)</p></li>
+						<li><p>Cafetière physique (parce que le café virtuel ...)</p></li>
 					</ul>
 				</section>
 			</section>
@@ -78,31 +78,31 @@
                     <ul>
 						<li><p>Composé d'une View et d'un ClientNetController</p></li>
 						<li><p>Execute une commande défini</p></li>
-                        <li><pre>bin/cpc 192.168.1.12 80 start</pre></li>
+                        <li><pre>bin/cpc client webcoffee 80 start</pre></li>
 					</ul>
 				</section>
 				<section>
                     <h3>Server</h3>
                     <ul>
-						<li><p>Réalisation d'un système de gestion de cafetière</p></li>
-						<li><p>À distance</p></li>
-						<li><p>Cafetière physique (parce que le café virtuel ...)</p></li>
+						<li><p>Composé d'un Driver et d'un ServerNetController</p></li>
+						<li><p>Ecoute sur le port passé en paramètre</p></li>
+                        <li><pre>bin/cpc server webcoffee 80</pre></li>
 					</ul>
 				</section>
                 <section>
                     <h3>NetController</h3>
                     <ul>
-						<li><p>Réalisation d'un système de gestion de cafetière</p></li>
-						<li><p>À distance</p></li>
-						<li><p>Cafetière physique (parce que boire du café virtuel ...)</p></li>
+						<li><p>Gère les interactions réseaux (lib boost)</p></li>
+						<li><p>Réagi aux Requete/Réponse</p></li>
+                        <li>Génère du HTTP <span class="fragment">(plus ou moins...)</span></li>
 					</ul>
 				</section>
                 <section>
                     <h3>PotState / Driver</h3>
                     <ul>
-						<li><p>Réalisation d'un système de gestion de cafetière</p></li>
-						<li><p>À distance</p></li>
-						<li><p>Cafetière physique (parce que boire du café virtuel ...)</p></li>
+						<li><p>Gère l'état du système</p></li>
+                        <li><p>PotState - virtuel / Driver - physique</p></li>
+						<li><p>Utilisation de scripts python</p></li>
 					</ul>
 				</section>
 			</section>
@@ -121,6 +121,13 @@
 			<section>
 				<h2>Démo !</h2>
 			</section>
+            <section data-background-video="../../rendu/cpc_demo.mp4">
+			</section>
+			<section>
+                <h2>Des questions ?</h2>
+                <h3>(Qui veut un café ?)</h3>
+			</section>
+
     </div>
   </div>
 
