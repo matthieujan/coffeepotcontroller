@@ -5,7 +5,7 @@
 #include "BasicClientNetCtl.h"
 #include "BasicServerNetCtl.h"
 #include "ConsoleView.h"
-#include "LedDriver.h"
+#include "CoffeeDriver.h"
 using namespace std;
 
 /*
@@ -23,7 +23,7 @@ int server(char* argv[]){
     /*
      * Creating the driver we want to control our appliance
      */
-    Driver * cd = new LedDriver();
+    Driver * cd = new CoffeeDriver();
     ServerCtl* sc = new ServerCtl(snc,cd);
     sc->run();
     return 0;

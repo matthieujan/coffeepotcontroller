@@ -9,8 +9,8 @@ SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
 CFLAGS=-W -Wall -ansi -pedantic -std=c++11
-LIB := -L lib -lboost_regex -lstdc++ -lboost_thread -lpthread -lboost_system -lwiringPi
-INC := -I include
+LIB := -L lib -lboost_regex -lstdc++ -lboost_thread -lpthread -lboost_system -lwiringPi -lpython2.7
+INC := -I include -I /usr/include/python2.7
 
 TARGET := bin/cpc
 
