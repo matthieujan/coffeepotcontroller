@@ -24,7 +24,7 @@ $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
 	@echo " $(CC) $(CFLAGS) $(INC) -c -o $@ $<"; $(CC) $(CFLAGS) $(INC) -c -o $@ $<
 
 clean:
-	@echo " Cleaning..."; 
+	@echo " Cleaning...";
 	@echo " $(RM) -r $(BUILDDIR) $(TARGET)"; $(RM) -r $(BUILDDIR) $(TARGET)
 
 # Tests
