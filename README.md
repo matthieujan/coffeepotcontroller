@@ -46,3 +46,4 @@ Il a été réalisé dans le cadre du cours Programmation Objet Avancée / Proje
 - Qualité du projet et fonctionnalités : Réseau / Pseudo Web / Cafetière
 - Vidéo : rendu/TODO
 - Présentation : ouvrir dans votre navigateur le fichier rendu/prez/index.html
+
